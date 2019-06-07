@@ -23,7 +23,7 @@ convnet = cnn.ConvNet(
             input_channels=3,
             scale_method=None,
             optimizer="nadam",
-            lr=0.001,
+            lr=0.005,
             lr_decay=(0.0)
         )
 
