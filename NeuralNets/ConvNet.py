@@ -203,7 +203,7 @@ class ConvNet:
 
                 if (nabla_dwb_layer_idx.size > 0 and "biases" in dx_type):
                     """Append bias deriv to the correct nabla_dwb_layer_idx location """
-                    if (self.layer_names[-1] == "conv" and nabla_dwb_layer_idx == (len(self.layer_names)-1)):
+                    if (self.layer_names[-1] == "pool" and nabla_dwb_layer_idx == (len(self.layer_names)-1)):
                         nabla_dx_layer[dx_type.index("biases")][nabla_dwb_layer_idx] = np.sum(delta_layers[-3], axis=(1, 2)).reshape((-1,) + self.bias_layers[layer_idx].shape)
                     else:
                         """ Go back 3 to grad y if last layer is pool """
